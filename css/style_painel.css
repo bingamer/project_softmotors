@@ -1,0 +1,272 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background: #076B60;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+header {
+    z-index: 1;
+    position: fixed;
+    background: #22242A;
+    padding: 20px;
+    width: calc(100% - 0%);
+    top: 0;
+    height: 10px;
+}
+
+.area_esquerda h3 {
+ color: #fff;
+ margin: -10px;
+ margin-left: 85px;
+ text-transform: uppercase;
+ font-size: 22px;
+ font-weight: 900;
+ text-shadow: 0 0 5px rgb(31, 31, 31), 0 0 5px rgb(31, 31, 31);
+}
+
+.area_esquerda span {
+    color: #03e9b7;
+}
+
+.area_esquerda .logo_softmotors {
+    position: absolute;
+    z-index: 9999;
+    top: 6px;
+}
+
+.botao_sair {
+    padding: 5px;
+    background: #03e9b7;
+    text-decoration: none;
+    float:right;
+    margin-top: -20px;
+    border-radius: 2px;
+    margin-right: 40px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.botao_sair:hover {
+    background: #076B60;
+    text-decoration:none;
+    color: #fff;
+}
+
+.sidebar {
+    z-index: 1;
+    top: 0;
+     background: #22242A;
+     margin-top: 50px;
+     padding-top: 30px;
+     position: fixed;
+     left: 0;
+     width: 250px;
+     height: calc(100% - 9%);
+     transition: 0.5s;
+     transition-property: left;
+     overflow-y: auto;
+}
+
+.perfil_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .perfil_info .imagem_profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+
+.sidebar .perfil_info h4 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.sidebar a:hover {
+    background: #076B60;
+}
+
+.sidebar i {
+    padding-right: 15px;
+    text-align:center;
+}
+
+label #sidebar_botao {
+    z-index: 1;
+    color: #fff;
+    position: fixed;
+    cursor: pointer;
+    left: 290px;
+    top: 12px;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+label #sidebar_botao:hover{
+    color: #039685;
+}
+
+#check:checked ~ .sidebar {
+    left: -185px;
+}
+
+#check:checked ~ .sidebar a span {
+    display: none;
+}
+
+#check:checked ~ .sidebar a {
+    font-size: 20px;
+    margin-left: 165px;
+    width: 100%;
+}
+
+.final_page {
+    margin: 0;
+    padding: 0;
+    width: calc(110% - 50px);
+    margin-top: -1%;
+    margin-left: 280px;
+    background: #076B60;
+    height: 100vh;
+    transition: 0.5s;
+    color: #fff;
+    align-items: center;
+}
+
+#check:checked ~ .final_page {
+    margin-left: 120px;
+}
+
+#check:checked ~ .sidebar .perfil_info {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.navegar_mobile {
+    display: none;
+}
+
+/*RESPONSIVE CSS JRGUALBERTO*/
+@media screen and (max-width: 780px) {
+    .sidebar {
+        display: none;
+    }
+    
+    #sidebar_botao {
+        display: none;
+    }
+
+    .final_page {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 10px 10px;
+        transition: 0s;
+    }
+
+    #check:checked ~.final_page {
+        margin-left: 0;
+    }
+
+    .navegar_mobile {
+        display: block;
+        width: calc(100% - 0%);
+    }
+
+    .nav_bar {
+        background: #22242A;
+        width: (110% - 0%);
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav_bar .perfil_imagem_mobile {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .nav_bar .nav_btn {
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        transition: 0.5s;
+        transition-property: color;
+    }
+
+    .nav_bar .nav_btn:hover {
+        color: #039685;
+    }
+
+    .nav_bar h4 {
+        color: #fff;
+        margin-right: 55%;
+    }
+
+    .mobile_nav_itens {
+        background: #22242A;
+        display: none;
+    }
+
+    .mobile_nav_itens a {
+        color: #fff;
+        display: block;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 60px;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: 0.5s;
+        transition-property: background;
+    }
+
+    .mobile_nav_itens a:hover {
+        background: #039685;
+    }
+
+    .mobile_nav_itens i {
+        padding-right: 10px;
+    }
+    .active {
+        display: block;
+    }
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>SoftMotors - Cadastro de Motos</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style_cadmotos.css">
+</head>
+
+<body>
+
+  <div class="principal">
+    <div class="area_esquerda">
+      <img src="./images/logosoftmotors.png" width="80" height="45" class="logo_softmotors" alt="">
+      <h3>CADASTRO DE MOTOS</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-2 placamoto">
+        Placa da Moto <input type="text" class="form-control moto" placeholder="Placa">
+      </div>
+      <div class="col-md-6 modelo">
+        Modelo <input type="text" class="form-control modelo" placeholder="Modelo da moto">
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-2 anofab">
+        Ano de Fabricação <input type="text" class="form-control anofab" placeholder="00/00/0000">
+      </div>
+      <div class="col-md-2 cor">
+        Cor <input type="text" class="form-control cor" placeholder="Cor">
+      </div>
+      <div class="col-md-2 anomodelo">
+        Ano Modelo <input type="text" class="form-control anomodelo" placeholder="Informe o ano">
+      </div>
+      <div class="col-md-2 valorvenal">
+        Valor Venal R$ <input type="text" class="form-control valorvenal" placeholder="R$">
+      </div>
+    </div>
+    <div class="button">
+      <input class="btn btn-primary buttons" type="submit" value="SALVAR">
+      <input class="btn btn-primary buttons" type="reset" value="LIMPAR">
+      <a class="btn btn-primary buttons" href="#" role="button">SAIR</a>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Placa" aria-label="Buscar Placa">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </nav>
+
+    <div class="busca_iframe">
+      <iframe id="preview-frame" src="busca_estoque.html" name="preview-frame" frameborder="0" noresize="noresize"
+      style="height: 300px; width: 100%;"></iframe>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
