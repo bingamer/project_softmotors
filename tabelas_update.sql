@@ -10,13 +10,14 @@ cargo VARCHAR(100),
 primary key (id)
 )default charset = utf8;
 
-create table usuarios (
-id INT(11) not null auto_increment,
-login VARCHAR(50) not null,
+--TABELA DE USUÁRIO ATUALIZADA REMOVIDAS AS FOTOS POR ENQUANTO / ADICIONADA NOME, E DATA/HORA DE ENVIO
+CREATE TABLE usuarios (
+id INT(11) NOT NULL AUTO_INCREMENT,
+nome VARCHAR(250) NOT NULL,
+login VARCHAR(50) NOT NULL, 
 senha VARCHAR(50) not null,
-conf_senha VARCHAR(50) not null,
-colaborador_id INT(11) not null,
-funcao VARCHAR(50),
-CONSTRAINT colaborador_id FOREIGN KEY (colaborador_id) REFERENCES colaborador (id),
-primary key (id)
-)default charset = utf8;
+conf_senha VARCHAR(50) NOT NULL,
+funcao VARCHAR(50) NOT NULL,
+dt DATETIME NOT NULL,
+PRIMARY KEY(id)
+)DEFAULT charset = utf8;
