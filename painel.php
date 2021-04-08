@@ -42,7 +42,7 @@ include('verificar_login.php');
     </div>
     <div class="mobile_nav_itens">
       <a target="preview-frame" href="clientes.html"><i class="fas fa-users"></i><span>Cadastrar Clientes</span></a>
-      <a target="preview-frame" href="cadastro_user.html"><i class="fas fa-users"></i><span> Cadastrar Usuário</span></a>
+      <a target="preview-frame" href="cadastro_user.php"><i class="fas fa-users"></i><span> Cadastrar Usuário</span></a>
       <a href="#"><i class="fas fa-coins"></i><span> Calcular Parcelas</span></a>
       <a href="#"><i class="fas fa-money-check-alt"></i><span> Vendas</span></a>
       <a target="preview-frame" href="cadastro_moto.html"><i class="fas fa-warehouse"></i><span> Estoque</span></a>
@@ -60,7 +60,7 @@ include('verificar_login.php');
       <h4>Rodrigo</h4>
     </div>
     <a target="preview-frame" href="clientes.html"><i class="fas fa-users"></i><span>Cadastrar Clientes</span></a>
-    <a target="preview-frame" href="cadastro_user.html"><i class="fas fa-users"></i><span> Cadastrar Usuário</span></a>
+    <a target="preview-frame" href="cadastro_user.php"><i class="fas fa-users"></i><span> Cadastrar Usuário</span></a>
     <a href="#"><i class="fas fa-coins"></i><span> Calcular Parcelas</span></a>
     <a href="#"><i class="fas fa-money-check-alt"></i><span> Vendas</span></a>
     <a target="preview-frame" href="cadastro_moto.html"><i class="fas fa-warehouse"></i><span> Estoque</span></a>
