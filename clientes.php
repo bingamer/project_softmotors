@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('conexao.php');
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -19,32 +24,32 @@
     </div>
 
     <div class="form-rows">
-      <form>
+    <form method="POST" action="cad_cliente.php" enctype="multipart/form-data">
         <div class="form-row">
           <div class="form-group col-md-9 nome">
-            Nome Completo: <input type="text" class="form-control" placeholder="Informe Nome Completo">
+            Nome Completo: <input type="text" name="nome" class="form-control" placeholder="Informe Nome Completo">
           </div>
           <div class="form-group col-md-2 nascimento">
-            Data de Nascimento: <input type="text" class="form-control" placeholder="00/00/0000">
+            Data de Nascimento: <input type="text" name="dataNascimento" class="form-control" placeholder="00/00/0000">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-4 cpf">
             <label for="Cpf">CPF</label>
-            <input type="Cpf" class="form-control" id="Cpf" placeholder="000.000.000-00">
+            <input type="text" class="form-control" name="cpf" id="carteiracpf" placeholder="000.000.000-00">
           </div>
           <div class="form-group col-md-3 rg">
             <label for="rg">RG</label>
-            <input type="rg" class="form-control" id="rg" placeholder="Informe RG">
+            <input type="text" class="form-control" name="rg" id="registro" placeholder="Informe RG">
           </div>
           <div class="form-group col-md-2 emissor">
             <label for="emissor">Org. Emissor</label>
-            <input type="text" class="form-control" id="emissor" placeholder="Informe o OE">
+            <input type="text" class="form-control" name="emissor" id="orgaoemissor" placeholder="Informe o OE">
           </div>
           <div class="form-group col-md-2 uf">
             <label for="inputUf">UF</label>
-            <select id="inputUf" class="form-control">
+            <select id="inputUf" name="uf" class="form-control">
               <option selected>Selecione...</option>
               <option>AC</option>
               <option>AL</option>
@@ -77,24 +82,24 @@
           </div>
           <div class="form-group col-md-2 cep">
             <label for="cep">CEP</label>
-            <input type="text" class="form-control" id="cep" placeholder="Informe CEP">
+            <input type="text" name="cep" class="form-control" id="codigopostal" placeholder="Informe CEP">
           </div>
           <div class="form-group col-md-5 endereco">
             <label for="inputEndereco">Endereco</label>
-            <input type="text" class="form-control" id="inputEndereco" placeholder="Informe o Endereco">
+            <input type="text" name="endereco" class="form-control" id="inputEndereco" placeholder="Informe o Endereco">
           </div>
           <div class="form-group col-md-4 cidade">
             <label for="inputCidade">Cidade</label>
-            <input type="text" class="form-control" id="inputCidade" placeholder="Informe sua cidade">
+            <input type="text" name="cidade" class="form-control" id="inputCidade" placeholder="Informe sua cidade">
           </div>
           <div class="form-group col-md-9 email">
             <label for="inputEmail">E-mail</label>
-            <input type="text" class="form-control" id="inputEmail" placeholder="exemplo@exemplo.com">
+            <input type="text" name="email" class="form-control" id="inputEmail" placeholder="exemplo@exemplo.com">
           </div>
 
           <div class="form-group col-md-2 telefone">
             <label for="inputTelefone">Telefone</label>
-            <input type="text" class="form-control" id="inputTelefone" placeholder="(000) 99999-9999">
+            <input type="text" name="telefone" class="form-control" id="inputTelefone" placeholder="(000) 99999-9999">
           </div>
         </div> <br>
 
