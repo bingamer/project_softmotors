@@ -1,16 +1,21 @@
-create table colaborador (
-	id INT(11) not null auto_increment,
-	cpf VARCHAR(14) not null,
-	data_nascimento DATE,
-	nome VARCHAR(255) not null,
-	rg VARCHAR(50) not null,
-	ctps VARCHAR(50),
-	pis VARCHAR(50),
-	cargo VARCHAR(100),
-	primary key (id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+------------------------------------------------------------------------
+----- DATABASE SOFTMOTORS ----------------------------------------------
+------------------------------------------------------------------------
 
---TABELA DE USUÁRIO ATUALIZADA REMOVIDAS AS FOTOS POR ENQUANTO / ADICIONADA NOME, E DATA/HORA DE ENVIO
+----------- TABELA COLABORADOR // SOFTMOTORS
+create table colaborador (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	cpf VARCHAR(14) NOT NULL,
+	data_nascimento DATE,
+	nome VARCHAR(255) NOT NULL,
+	rg VARCHAR(50) NOT NULL,
+	ctps VARCHAR(50) NOT NULL,
+	pis VARCHAR(50) NOT NULL,
+	cargo VARCHAR(100) NOT NULL,
+	primary key (id)
+)DEFAULT charset = utf8;
+
+----------- TABELA USUÁRIOS // SOFTMOTORS
 CREATE TABLE usuarios (
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(250) NOT NULL,
@@ -20,8 +25,9 @@ CREATE TABLE usuarios (
 	funcao VARCHAR(50) NOT NULL,
 	dt DATETIME NOT NULL,
 	PRIMARY KEY(id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)DEFAULT charset = utf8;
 
+----------- TABELA CLIENTES // SOFTMOTORS
 CREATE TABLE clientes (
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(255) NOT NULL,
@@ -36,4 +42,19 @@ CREATE TABLE clientes (
 	email VARCHAR(50) NOT NULL,
 	telefone VARCHAR(100) NOT NULL,
 	PRIMARY KEY(id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)DEFAULT charset = utf8;
+
+----------- TABELA MOTOS // SOFTMOTORS
+CREATE TABLE motos (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	placa VARCHAR(8) NOT NULL,
+	ano_fab VARCHAR(20) NOT NULL,
+	ano_mod VARCHAR(20) NOT NULL,
+	modelo VARCHAR(255) NOT NULL,
+	cor VARCHAR(255) NOT NULL,
+	valor_moto VARCHAR(255) NOT NULL,
+	valor_entrada VARCHAR(255) NOT NULL,
+	valor_saida VARCHAR(255) NOT NULL,
+	observacao VARCHAR(255) NOT NULL,
+	PRIMARY KEY(id)
+)DEFAULT charset = utf8;
