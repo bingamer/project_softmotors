@@ -46,15 +46,17 @@ CREATE TABLE clientes (
 
 ----------- TABELA MOTOS // SOFTMOTORS
 CREATE TABLE estoque_motos (
-	id INT(11) NOT NULL AUTO_INCREMENT,
-	placa VARCHAR(8) NOT NULL,
-	ano_fab VARCHAR(20) NOT NULL,
-	ano_mod VARCHAR(20) NOT NULL,
-	modelo VARCHAR(255) NOT NULL,
-	cor VARCHAR(255) NOT NULL,
-	valor_moto VARCHAR(255) NOT NULL,
-	valor_entrada VARCHAR(255) NOT NULL,
-	valor_saida VARCHAR(255) NOT NULL,
-	observacao VARCHAR(255) NOT NULL,
-	PRIMARY KEY(id)
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    placa VARCHAR(8) NOT NULL,
+    ano_fab VARCHAR(20) NOT NULL,
+    ano_mod VARCHAR(20) NOT NULL,
+    modelo VARCHAR(255) NOT NULL,
+    cor VARCHAR(255) NOT NULL,
+    valor_moto VARCHAR(255) NOT NULL,
+    valor_entrada VARCHAR(255) NOT NULL,
+    valor_saida VARCHAR(255) NOT NULL,
+    observacao VARCHAR(255) NOT NULL,
+    data DATETIME,
+    PRIMARY KEY(id)
 )DEFAULT charset = utf8;
+
