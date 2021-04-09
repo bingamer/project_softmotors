@@ -45,7 +45,7 @@ CREATE TABLE clientes (
 )DEFAULT charset = utf8;
 
 ----------- TABELA MOTOS // SOFTMOTORS
-CREATE TABLE motos (
+CREATE TABLE estoque_motos (
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	placa VARCHAR(8) NOT NULL,
 	ano_fab VARCHAR(20) NOT NULL,
