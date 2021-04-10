@@ -1,6 +1,25 @@
 <?php
 session_start();
 include('conexao.php');
+
+if (isset($_POST['pesquisar'])){
+    
+  $mot = mysqli_real_escape_string($conexao, $_POST['busca']);
+
+  $sql_motos = "SELECT * FROM estoque_motos WHERE placa LIKE '%$mot%' OR ano_fab LIKE '%$mot%' OR modelo LIKE '%$mot%' OR cor LIKE '%$mot%' OR ano_mod LIKE '%$mot%'";
+  $busca = mysqli_query($conexao, $sql_motos) or die(mysqli_error($conexao));
+  $row_Busca = mysqli_fetch_assoc($busca);
+  $totalRows_busca = mysqli_num_rows($busca);
+
+}else {
+
+  $sql_motos = "SELECT * FROM estoque_motos";
+  $busca = mysqli_query($conexao, $sql_motos) or die(mysqli_error($conexao));
+  $row_Busca = mysqli_fetch_assoc($busca);
+  $totalRows_busca = mysqli_num_rows($busca);
+}
+
+?>
 ?>
 
 <!doctype html>
@@ -36,13 +55,13 @@ include('conexao.php');
       </div><br>
       <div class="form-row">
         <div class="col-md-2 anofab">
-          Ano de Fabricação <input type="text" name="anoFab" class="form-control" placeholder="00/00/0000" required>
+          Ano de Fabricação <input type="text" name="anoFab" class="form-control" placeholder="0000" required>
         </div>
         <div class="col-md-2 cor">
           Cor <input type="text" name="corMoto" class="form-control" placeholder="Cor" required>
         </div>
         <div class="col-md-2 anomodelo">
-          Ano Modelo <input type="text" name="anoModelo" class="form-control" placeholder="Informe o ano" required>
+          Ano Modelo <input type="text" name="anoModelo" class="form-control" placeholder="0000" required>
         </div>
         <div class="col-md-2 valorvenal">
           Valor Venal R$ <input type="text" name="valorVenal" class="form-control" placeholder="R$" required>
@@ -68,18 +87,42 @@ include('conexao.php');
         <a class="btn btn-primary buttons" href="#" role="button">SAIR</a>
       </div>
     </form> 
-
-    <nav class="navbar navbar-light bg-light">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar Placa" aria-label="Buscar Placa">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-    </nav>
-
-    <div class="busca_iframe">
-      <iframe id="preview-frame" src="busca_estoque.html" name="preview-frame" frameborder="0" noresize="noresize"
-      style="height: 300px; width: 100%;"></iframe>
-    </div>
+    <div class="col-md-10">
+    <div class="pesquisa">
+                <nav class="navbar navbar-light bg-light">
+                    <form class="form-inline" method="POST" action="">
+                        <input class="form-control mr-sm-2" type="search" name="busca" placeholder="Buscar" aria-label="Buscar motentes">
+                        <button class="btn btn-outline-success my-2 my-sm-0" name="pesquisar" type="submit">Buscar</button>
+                    </form>
+                </nav>
+            </div>    
+          <table class="tabela_busca"> <!--busca de motentes-->
+                <tr>
+                    <td>PLACA</td>
+                    <td>ANO FABRICACAO</td>
+                    <td>ANO MODELO</td>
+                    <td>MODELO</td>
+                    <td>VALOR VENAL</td>
+                    <td>OPCOES</td>
+                </tr>
+            <?php 
+              do {
+            ?>  
+                <tr>
+                    <td><?php echo $row_Busca['placa']; ?></td>
+                    <td><?php echo $row_Busca['ano_fab']; ?></td>
+                    <td><?php echo $row_Busca['ano_mod']; ?></td>
+                    <td><?php echo $row_Busca['modelo']; ?></td>
+                    <td><?php echo $row_Busca['valor_moto']; ?></td>
+                    <td>
+                        <a href="#"><img src="images/edit.png" width="20" height="18" alt="Editar"></a>
+                        <a href="#"><img src="images/trash.png" width="20" height="18" alt="Excluir"></a>
+                    </td>
+                </tr>
+            <?php } while($row_Busca = mysqli_fetch_assoc($busca)); ?>
+          </table>
+      </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
