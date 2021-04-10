@@ -1,6 +1,23 @@
 <?php
 session_start();
 include('conexao.php');
+
+if (isset($_POST['pesquisar'])){
+    
+    $user = mysqli_real_escape_string($conexao, $_POST['busca']);
+  
+    $sql_user = "SELECT * FROM usuarios WHERE nome LIKE '%$user%' OR login LIKE '%$user%'";
+    $busca = mysqli_query($conexao, $sql_user) or die(mysqli_error($conexao));
+    $row_Busca = mysqli_fetch_assoc($busca);
+    $totalRows_busca = mysqli_num_rows($busca);
+  
+  }else {
+  
+    $sql_user = "SELECT * FROM usuarios";
+    $busca = mysqli_query($conexao, $sql_user) or die(mysqli_error($conexao));
+    $row_Busca = mysqli_fetch_assoc($busca);
+    $totalRows_busca = mysqli_num_rows($busca);
+  }
 ?>
 
 <!doctype html>
@@ -61,20 +78,42 @@ include('conexao.php');
                 </div>
             </form>
 
-            <!--<nav class="navbar navbar-light bg-light">
-                <form class="form-inline">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Buscar Usuário" aria-label="Buscar Usuário">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-              </nav>
-          
-              <div class="busca_iframe">
-                <iframe id="preview-frame" src="busca_colaborador.html" name="preview-frame" frameborder="0" noresize="noresize"
-                style="height: 300px; width: 100%;"></iframe>
-              </div>-->
-        </div>
+            
 
     </div>
+    <div class="form-row">
+            <div class="pesquisa">
+                        <nav class="navbar navbar-light bg-light">
+                            <form class="form-inline" method="POST" action="">
+                                <input class="form-control mr-sm-2" type="search" name="busca" placeholder="Buscar" aria-label="Buscar motentes">
+                                <button class="btn btn-outline-success my-2 my-sm-0" name="pesquisar" type="submit">Buscar</button>
+                            </form>
+                        </nav>
+                    </div>    
+                    <table class="tabela_busca"> <!--busca de motentes-->
+                        <tr>
+                            <td>NOME</td>
+                            <td>LOGIN</td>
+                            <td>FUNCAO</td>
+                            <td>OPCOES</td>
+                        </tr>
+                    <?php 
+                        do {
+                    ?>  
+                        <tr>
+                            <td><?php echo $row_Busca['nome']; ?></td>
+                            <td><?php echo $row_Busca['login']; ?></td>
+                            <td><?php echo $row_Busca['funcao']; ?></td>
+                            <td>
+                                <a href="#"><img src="images/edit.png" width="20" height="18" alt="Editar"></a>
+                                <a href="#"><img src="images/trash.png" width="20" height="18" alt="Excluir"></a>
+                            </td>
+                        </tr>
+                    <?php } while($row_Busca = mysqli_fetch_assoc($busca)); ?>
+                    </table>
+                </div>
+            </div>
+        </div>
 
 
 
